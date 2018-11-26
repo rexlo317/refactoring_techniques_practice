@@ -7,10 +7,15 @@ import static org.junit.jupiter.api.Assertions.*;
 class PriceCalculatorTest {
 
     @Test
-    void getPrice() {
+    void getNoDiscountPrice() {
+        PriceCalculator priceCalculator = new PriceCalculator();
+        assertEquals(50100,  priceCalculator.getPrice(50, 1000));
     }
 
     @Test
-    void getPrice1() {
+    void getDiscountPrice() {
+        PriceCalculator priceCalculator = new PriceCalculator();
+        assertEquals(47850,  priceCalculator.getPrice(5000, 10));
     }
+
 }
